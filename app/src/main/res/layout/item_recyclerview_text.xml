@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/yellow"
+        android:id="@+id/ivPic"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Alice Smith"
+        app:layout_constraintTop_toTopOf="@id/ivPic"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/tvName"
+        app:layout_constraintStart_toEndOf="@+id/ivPic"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/great_i_will_hava_a_look"
+        android:id="@+id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        />
+    
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:id="@+id/tvTime"
+        android:text="4:20 PM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTime"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        android:text="3"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:background="@drawable/circle"
+        app:layout_constraintStart_toStartOf="@id/tvTime"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
