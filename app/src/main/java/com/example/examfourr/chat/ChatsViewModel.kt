@@ -1,33 +1,39 @@
 package com.example.examfourr.chat
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.examfourr.network.Network
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import java.io.IOException
-import java.io.InputStream
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class ChatsViewModel: ViewModel(){
+class ChatsViewModel() : ViewModel() {
 
 
+    private val _chatFlow = MutableStateFlow<List<Chat>>(emptyList())
+    val chatsFlow: SharedFlow<List<Chat>> = _chatFlow.asSharedFlow()
 
 
-    fun parseJson(jsonString: String): List<Chat>? {
-        val moshi = Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
-            .build()
-
-        val listType = Types.newParameterizedType(List::class.java, Chat::class.java)
-        val adapter: JsonAdapter<List<Chat>> = moshi.adapter(listType)
-
-        return adapter.fromJson(jsonString)
-
+    fun getChats() {
+        viewModelScope.launch {
+            val response = Network.chatsService().getChats()
+            if (response.isSuccessful) {
+                _chatFlow.value = response.body()!!
+            }else{
+                println("bla")
+            }
+        }
     }
-
-
-
 
 
 }
