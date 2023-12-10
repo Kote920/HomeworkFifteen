@@ -1,61 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp">
+    android:background="#22343C"
+    android:padding="10dp"
+>
+
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPic"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:background="@drawable/green"
+        android:padding="20dp"
+        android:src="@drawable/g"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/yellow"
-        android:id="@+id/ivPic"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Alice Smith"
-        app:layout_constraintTop_toTopOf="@id/ivPic"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="20dp"
         android:id="@+id/tvName"
-        app:layout_constraintStart_toEndOf="@+id/ivPic"/>
-
-    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/great_i_will_hava_a_look"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="emrata"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ivPic"
+        app:layout_constraintTop_toTopOf="@id/ivPic" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMessage"
-        app:layout_constraintTop_toBottomOf="@id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:maxLength="20"
+        android:text="@string/you_left_your_boxers_at_my_place"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@id/tvName"
-        />
-    
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1px"
+        android:layout_marginTop="2dp"
+        android:maxLength="20"
+        android:text="@string/dots"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tvMessage"
+        app:layout_constraintTop_toTopOf="@id/tvMessage"
+        app:layout_constraintBottom_toBottomOf="@id/tvMessage"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_4_20_pm"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:id="@+id/tvTime"
-        android:text="4:20 PM"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvName"/>
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTime"
-        app:layout_constraintEnd_toEndOf="@id/tvTime"
-        android:text="3"
-        android:gravity="center"
-        android:textColor="#FFF"
+        android:layout_marginTop="2dp"
         android:background="@drawable/circle"
-        app:layout_constraintStart_toStartOf="@id/tvTime"
-        android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:text="@string/_3"
+        android:id="@+id/tvUnreads"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:src="@drawable/dots"
+        android:id="@+id/ivDots"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
 
-
-
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLine"
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/separator"
+        app:layout_constraintStart_toStartOf="@id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="#22343C"
+    android:padding="10dp">
 
-</LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/yellow"
+        android:padding="20dp"
+        android:src="@drawable/g"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="deda"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/ivPic"
+        app:layout_constraintTop_toTopOf="@id/ivPic" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPin"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:background="@drawable/grey"
+        android:src="@drawable/ic_voice"
+        app:layout_constraintBottom_toBottomOf="@id/tvMessage"
+        app:layout_constraintEnd_toStartOf="@id/tvMessage"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:maxLength="20"
+        android:text="@string/sent_a_voice_message"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/ivPin"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1px"
+        android:layout_marginTop="2dp"
+        android:text="@string/dots"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tvMessage"
+        app:layout_constraintTop_toTopOf="@id/tvMessage"
+        app:layout_constraintBottom_toBottomOf="@id/tvMessage"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_4_20_pm"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUnreads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:text="@string/_3"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:src="@drawable/dots"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLine"
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/separator"
+        app:layout_constraintStart_toStartOf="@id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@id/tvMessage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
